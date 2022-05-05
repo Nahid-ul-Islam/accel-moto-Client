@@ -17,7 +17,7 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="bg-slate-800 pb-1 sticky top-0 lg:px-32">
+        <nav className="bg-slate-800 pb-1 sticky top-0">
             <div className="lg:mx-36 mx-auto pr-4 lg:px-0">
                 <div className="flex items-center justify-between h-16">
 
@@ -36,30 +36,60 @@ const Header = () => {
                     </div>
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
-                            <NavLink 
+                            <NavLink
                                 to="/home"
-                                className="text-decoration-none hover:bg-stone-400 text-white text-xl px-3 py-2 rounded-md  font-medium"
+                                className="text-decoration-none hover:text-rose-600 text-white text-xl px-3 py-2 rounded-md font-medium"
                             >
                                 Home
                             </NavLink>
 
-                            <NavLink
+                            <div>
+                                {
+                                    user ?
+                                        <>
+                                            <NavLink
+                                                to="/manage-item"
+                                                className="text-decoration-none text-white text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
+                                            >
+                                                Manage Item
+                                            </NavLink>
+
+                                            <NavLink
+                                                to="/my-items"
+                                                className="text-decoration-none text-white text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
+                                            >
+                                                My Item
+                                            </NavLink>
+
+                                            <NavLink
+                                                to="/add-item"
+                                                className="text-decoration-none text-white text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
+                                            >
+                                                Add Item
+                                            </NavLink>
+                                        </>
+                                        :
+                                        ""
+                                }
+                            </div>
+
+                            {/* <NavLink
                                 to="/services"
-                                className="text-decoration-none text-white  hover:bg-stone-400  text-xl px-3 py-2 rounded-md text-medium font-medium"
+                                className="text-decoration-none text-white  hover:text-rose-600  text-xl px-3 py-2 rounded-md text-medium font-medium"
                             >
                                 Services
-                            </NavLink>
+                            </NavLink> */}
 
                             <NavLink
                                 to="/blogs"
-                                className="text-decoration-none text-white hover:bg-stone-400  text-xl px-3 py-2 rounded-md text-medium font-medium"
+                                className="text-decoration-none text-white hover:text-rose-600  text-xl px-3 py-2 rounded-md text-medium font-medium"
                             >
                                 Blogs
                             </NavLink>
 
                             <NavLink
                                 to="/aboutme"
-                                className="text-decoration-none text-white hover:bg-stone-400  text-xl px-3 py-2 rounded-md text-medium font-medium"
+                                className="text-decoration-none text-white hover:text-rose-600  text-xl px-3 py-2 rounded-md text-medium font-medium"
                             >
                                 About Me
                             </NavLink>
@@ -67,13 +97,13 @@ const Header = () => {
                             <div>
                                 {
                                     user ?
-                                        <button onClick={handleSignOut} className='text-decoration-none text-white text-xl hover:bg-stone-400 px-3 py-2 rounded-md text-medium font-medium'>
+                                        <button onClick={handleSignOut} className='text-decoration-none text-white text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium'>
                                             Sign Out
                                         </button>
                                         :
                                         <NavLink
                                             to="/signin"
-                                            className="text-decoration-none text-white text-xl hover:bg-stone-400 px-3 py-2 rounded-md text-medium font-medium"
+                                            className="text-decoration-none text-white text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
                                         >
                                             Sign In
                                         </NavLink>
@@ -136,47 +166,47 @@ const Header = () => {
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         <NavLink
                             to="/home"
-                            className="text-decoration-none hover:bg-stone-400 text-white text-xl block px-3 py-2 rounded-md font-medium"
+                            className="text-decoration-none hover:text-rose-600 text-white text-xl block px-3 py-2 rounded-md font-medium"
                         >
                             Home
                         </NavLink>
 
                         <NavLink
                             to="/services"
-                            className="text-decoration-none text-white text-xl hover:bg-stone-400 block px-3 py-2 rounded-md font-medium"
+                            className="text-decoration-none text-white text-xl hover:text-rose-600 block px-3 py-2 rounded-md font-medium"
                         >
                             Services
                         </NavLink>
 
                         <NavLink
                             to="blogs"
-                            className="text-decoration-none text-white text-xl hover:bg-stone-400 block px-3 py-2 rounded-md font-medium"
+                            className="text-decoration-none text-white text-xl hover:text-rose-600 block px-3 py-2 rounded-md font-medium"
                         >
                             Blogs
                         </NavLink>
 
                         <NavLink
                             to="aboutme"
-                            className="text-decoration-none text-white hover:bg-stone-400  text-xl block px-3 py-2 rounded-md font-medium"
+                            className="text-decoration-none text-white hover:text-rose-600  text-xl block px-3 py-2 rounded-md font-medium"
                         >
                             About Me
                         </NavLink>
 
                         <div>
-                                {
-                                    user ?
-                                        <button onClick={handleSignOut} className='text-decoration-none text-white hover:bg-stone-400  text-xl block px-3 py-2 rounded-md font-medium'>
-                                            Sign Out
-                                        </button>
-                                        :
-                                        <NavLink
-                                            to="/signin"
-                                            className="text-decoration-none text-white text-xl hover:bg-stone-400 px-3 py-2 rounded-md text-medium font-medium"
-                                        >
-                                            Sign In
-                                        </NavLink>
-                                }
-                            </div>
+                            {
+                                user ?
+                                    <button onClick={handleSignOut} className='text-decoration-none text-white hover:text-rose-600  text-xl block px-3 py-2 rounded-md font-medium'>
+                                        Sign Out
+                                    </button>
+                                    :
+                                    <NavLink
+                                        to="/signin"
+                                        className="text-decoration-none text-white text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
+                                    >
+                                        Sign In
+                                    </NavLink>
+                            }
+                        </div>
                     </div>
                 </div>
             )}

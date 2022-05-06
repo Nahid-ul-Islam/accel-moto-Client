@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 const SingleItem = () => {
     const { id } = useParams();
+    const stockRef = useRef('');
     const [item, setItem] = useState({});
     const { _id, name, img, description, supplierName, quantity, price } = item;
 
@@ -12,48 +13,80 @@ const SingleItem = () => {
             .then(data => setItem(data));
     }, [item]);
 
-    const handleDelivered = () =>  {
+    const handleDelivered = () => {
         let quantity = item.quantity;
-        quantity-=1;
+        quantity -= 1;
         //console.log(quantity);
-        const updateItem = {quantity};
-        console.log('updateItem',updateItem);
-        
+        const updateItem = { quantity };
+        console.log('updateItem', updateItem);
+
         fetch(`http://localhost:5000/bikes/${id}`, {
-             method: 'PUT',
-             headers: {
-                  'content-type': 'application/json',
-              },
-             body: JSON.stringify(updateItem),
-          })
-          .then(res => res.json())
-          .then(data => {
-              console.log("success", data);
-              alert('Delivered');
-          })
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(updateItem),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log("success", data);
+                alert('Delivered');
+            })
+    }
+
+    const handleStock = (event) => {
+        event.preventDefault();
+        const newStockedItem = parseInt(stockRef.current.value);
+        console.log(newStockedItem);
+        let quantity = item.quantity + newStockedItem;
+        console.log(quantity);
+
+        const updateItem = { quantity };
+        console.log(updateItem);
+
+        fetch(`http://localhost:5000/bikes/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(updateItem),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log("success", data);
+                alert('Stock Added');
+            })
+
+
     }
     return (
-        <div className='flex justify-center md:mt-10'>
-            <div>
-                <h2 className='text-center font-bold text-2xl md:mb-4'>Details of "{name}"</h2>
-                <div className="p-5 bg-white max-w-lg rounded overflow-hidden shadow-2xl mb-16">
-                    <div className='flex justify-center'>
-                        <img src={img} alt="" srcSet="" />
+        <div className='bg-gray-200 flex justify-center md:pt-10 lg:h-screen'>
+                <div className='pb-10 2xl:pt-20'>
+                    <div className='w-3/4 mx-auto pt-10'>
+                        <div className='flex items-center justify-center flex-col xl:flex-row gap-14 md:gap-10'>
+                            <div>
+                                <img className='w-[750px] rounded-sm hover:opacity-75' src={img} alt="" />
+                            </div>
+                            <div className='bg-gray-200 p-4 relative rounded-sm'>
+                                <h1 className='text-2xl font-bold text-rose-600 pb-2'>{name}</h1>
+                                <p className='text-gray-700 pb-1'> {item.description} </p>
+                                <p className='text-xl text-slate-800 font-medium pb-1'>Price: <span className='text-rose-600 font-semibold '>{price}</span></p>
+                                <h2 className='text-slate-800 text-2xl font-bold pb-1 absolute -top-8 md:top-2 right-0 pr-0 md:pr-4'>Quantity: <span className='text-rose-600'>{quantity}</span></h2>
+                                <h2 className='text-gray-700 pb-1'>Supplied from {supplierName}</h2>
+                                <h2 className='text-gray-700 pb-2'>Sold status: No</h2>
+                                <button onClick={handleDelivered} className='w-32 block bg-gray-900 py-2 mb-3 font-medium text-white border-2 border-gray-700 rounded-sm hover:bg-stone-200 hover:text-black'>
+                                    Delivered
+                                </button>
+                                <form onSubmit={handleStock} className='flex flex-col md:flex-row space-x-0 md:space-x-1 space-y-2 md:space-y-0 mb-1'>
+                                    <input className='w-72 pl-2 py-2 border-2 rounded-sm border-gray-700' type="text" name="text" ref={stockRef} id="" placeholder='Add quantity to restock the item' />
+                                    <button className='w-32 block bg-gray-900 py-2 font-medium text-white border-2 border-gray-700 rounded-sm hover:bg-stone-200 hover:text-black'>Add to stock</button>
+                                </form>
+                            </div>
+                        </div>
+
                     </div>
-                    <h2 className='text-2xl font-medium text-center'>{name}</h2>
-                    <p className='text-center font-medium'>Price: {price}</p>
-                    <p className='text-center font-medium'>Quantity: {quantity}</p>
-                    <p className='text-center font-medium'>Supplier: {supplierName}</p>
-                    <p className='mt-3 text-justify'>{description}</p>
-                    <div className='text-center'>
-                    
-                            <button 
-                            onClick={handleDelivered}
-                            className="bg-rose-800 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded mt-5">Delivered</button>
-                    
-                    </div>
+
                 </div>
-            </div>
         </div>
     );
 };

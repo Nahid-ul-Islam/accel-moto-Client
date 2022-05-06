@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
+import ExtraSectionOne from '../ExtraSectionOne/ExtraSectionOne';
 import Items from '../Items/Items';
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
         <div className='bg-slate-800'>  
             <Banner></Banner>
             <Items></Items>
+            <ExtraSectionOne></ExtraSectionOne>
         </div>
     );
 };

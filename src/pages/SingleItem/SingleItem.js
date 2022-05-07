@@ -60,7 +60,7 @@ const SingleItem = () => {
 
     }
     return (
-        <div className='bg-gray-200 flex justify-center md:pt-10 lg:h-screen'>
+        <div className='bg-slate-500 flex justify-center md:pt-10 lg:h-screen'>
                 <div className='pb-10 2xl:pt-20'>
                     <div className='w-3/4 mx-auto pt-10'>
                         <div className='flex items-center justify-center flex-col xl:flex-row gap-14 md:gap-10'>

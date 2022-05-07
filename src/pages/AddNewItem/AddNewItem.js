@@ -1,6 +1,11 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const AddNewItem = () => {
+
+    const [user] = useAuthState(auth);
+
     const handleAddItem = event => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -48,7 +53,7 @@ const AddNewItem = () => {
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                                         Email
                                     </label>
-                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" name="email" type="email" placeholder="example@gmail.com" required />
+                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" name="email" type="email" value={user.email} readOnly required />
                                 </div>
                             </div>
                             <div className="flex flex-wrap mb-6">

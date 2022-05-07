@@ -48,30 +48,30 @@ const Header = () => {
                                     user ?
                                         <div className='flex'>
                                             <div>
-                                            <NavLink
-                                                to="/manage-item"
-                                                className="text-decoration-none text-white xl:text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
-                                            >
-                                                Manage Item
-                                            </NavLink>
+                                                <NavLink
+                                                    to="/manage-item"
+                                                    className="text-decoration-none text-white xl:text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
+                                                >
+                                                    Manage Item
+                                                </NavLink>
                                             </div>
 
                                             <div>
-                                            <NavLink
-                                                to="/my-items"
-                                                className="text-decoration-none text-white xl:text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
-                                            >
-                                                My Item
-                                            </NavLink>
+                                                <NavLink
+                                                    to="/my-items"
+                                                    className="text-decoration-none text-white xl:text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
+                                                >
+                                                    My Item
+                                                </NavLink>
                                             </div>
 
                                             <div>
-                                            <NavLink
-                                                to="/add-new-item"
-                                                className="text-decoration-none text-white xl:text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
-                                            >
-                                                Add Item
-                                            </NavLink>
+                                                <NavLink
+                                                    to="/add-new-item"
+                                                    className="text-decoration-none text-white xl:text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
+                                                >
+                                                    Add Item
+                                                </NavLink>
                                             </div>
                                         </div>
                                         :
@@ -177,12 +177,33 @@ const Header = () => {
                             Home
                         </NavLink>
 
-                        <NavLink
-                            to="/services"
-                            className="text-decoration-none text-white text-xl hover:text-rose-600 block px-3 py-2 rounded-md font-medium"
-                        >
-                            Services
-                        </NavLink>
+                        {
+                            user ?
+                                <div>
+                                    <NavLink
+                                        to="/manage-item"
+                                        className="text-decoration-none text-white text-xl hover:text-rose-600 block px-3 py-2 rounded-md font-medium"
+                                    >
+                                        Manage Item
+                                    </NavLink>
+                                    <NavLink
+                                        to="/my-items"
+                                        className="text-decoration-none text-white text-xl hover:text-rose-600 block px-3 py-2 rounded-md font-medium"
+                                    >
+                                        My Item
+                                    </NavLink>
+                                    <NavLink
+                                        to="/add-new-item"
+                                        className="text-decoration-none text-white text-xl hover:text-rose-600 block px-3 py-2 rounded-md font-medium"
+                                    >
+                                        Add Item
+                                    </NavLink>
+                                </div>
+
+                                :
+                                ''
+                        }
+
 
                         <NavLink
                             to="blogs"

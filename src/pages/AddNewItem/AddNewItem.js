@@ -53,7 +53,7 @@ const AddNewItem = () => {
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                                         Email
                                     </label>
-                                    <input className=" border-gray-500 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" name="email" type="email" value={user.email} readOnly required />
+                                    <input className=" border-gray-500 appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" name="email" type="email" value={user.email} readOnly required />
                                 </div>
                             </div>
                             <div className="flex flex-wrap mb-6">
@@ -61,7 +61,7 @@ const AddNewItem = () => {
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                                         Description
                                     </label>
-                                    <textarea className=" border-gray-500 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="description" name="description" type="text" placeholder="Description about the Item" required />
+                                    <textarea className=" border-gray-500 appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="description" name="description" type="text" placeholder="Description about the Item" required />
                                 </div>
                             </div>
                             <div className="flex flex-wrap mb-6">
@@ -69,7 +69,7 @@ const AddNewItem = () => {
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                                         Image URL
                                     </label>
-                                    <input className="border-gray-500 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="image" name="image" type="text" placeholder="https://i.ibb.co/Hp2HXcX/02.webp" required />
+                                    <input className="border-gray-500 appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="image" name="image" type="text" placeholder="https://i.ibb.co/Hp2HXcX/02.webp" required />
                                 </div>
                             </div>
                             <div className="flex flex-wrap mb-2">
@@ -89,7 +89,7 @@ const AddNewItem = () => {
                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                                         Quantity
                                     </label>
-                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 border-gray-500 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="quantity" name="quantity" type="text" placeholder="116" required />
+                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 border-gray-500 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="quantity" name="quantity" type="text" placeholder="116" required />
                                 </div> 
                             </div>
                             <div className='flex justify-center my-7'>

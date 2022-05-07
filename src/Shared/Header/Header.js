@@ -62,7 +62,7 @@ const Header = () => {
                                             </NavLink>
 
                                             <NavLink
-                                                to="/add-item"
+                                                to="/add-new-item"
                                                 className="text-decoration-none text-white text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
                                             >
                                                 Add Item

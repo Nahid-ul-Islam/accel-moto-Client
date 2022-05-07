@@ -6,6 +6,7 @@ import SignIn from './pages/SignIn/SignIn';
 import SignUp from './pages/SignUP/SignUp';
 import SingleItem from './pages/SingleItem/SingleItem';
 import ManageItems from './pages/ManageItems/ManageItems';
+import AddNewItem from './pages/AddNewItem/AddNewItem';
 
 
 function App() {
@@ -19,7 +20,9 @@ function App() {
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/bikes/:id' element={<SingleItem></SingleItem>}></Route>
         <Route path='/manage-item' element={<ManageItems></ManageItems>}></Route>
+        <Route path='/add-new-item' element={<AddNewItem></AddNewItem>}></Route>
       </Routes>
+      
     </div>
   );
 }

@@ -56,8 +56,8 @@ const SignIn = () => {
 
 
     return (
-        <div className='flex justify-between h-screen my-auto items-center bg-slate-500'>
-            <div className='hidden lg:block mx-5 poster '>
+        <div className='flex lg:justify-between h-screen my-auto items-center bg-slate-500'>
+            <div className='hidden lg:block ml-5 poster '>
                 <img src={img} alt="" />
             </div>
             <div className=''>

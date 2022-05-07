@@ -7,6 +7,9 @@ import SignUp from './pages/SignUP/SignUp';
 import SingleItem from './pages/SingleItem/SingleItem';
 import ManageItems from './pages/ManageItems/ManageItems';
 import AddNewItem from './pages/AddNewItem/AddNewItem';
+import RequireAuth from './Shared/RequireAuth/RequireAuth';
+import MyItem from './pages/MyItems/MyTabularItem/MyTabularItem';
+import MyItems from './pages/MyItems/MyItems';
 
 
 function App() {
@@ -19,10 +22,28 @@ function App() {
         <Route path='/signin' element={<SignIn></SignIn>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/bikes/:id' element={<SingleItem></SingleItem>}></Route>
-        <Route path='/manage-item' element={<ManageItems></ManageItems>}></Route>
-        <Route path='/add-new-item' element={<AddNewItem></AddNewItem>}></Route>
+        
+        <Route path='/manage-item' element={
+          <RequireAuth>
+            <ManageItems></ManageItems>
+          </RequireAuth>
+        }></Route>
+        
+        <Route path='/add-new-item' element={
+          <RequireAuth>
+            <AddNewItem></AddNewItem>
+          </RequireAuth>
+        }></Route>
+
+        <Route path='/my-items' element={
+          <RequireAuth>
+            <MyItems></MyItems>
+          </RequireAuth>
+        }>
+
+        </Route>
       </Routes>
-      
+
     </div>
   );
 }

@@ -18,7 +18,7 @@ const Header = () => {
 
     return (
         <nav className="bg-slate-800 pb-1 sticky top-0">
-            <div className="lg:mx-36 mx-auto pr-4 lg:px-0">
+            <div className="xl:mx-36 lg:mx-10 mx-auto pr-4 lg:px-0">
                 <div className="flex items-center justify-between h-16">
 
                     <div className="flex-shrink-0">
@@ -34,11 +34,11 @@ const Header = () => {
                         </NavLink>
 
                     </div>
-                    <div className="hidden md:block">
+                    <div className="hidden md:block ">
                         <div className="ml-10 flex items-baseline space-x-4">
                             <NavLink
                                 to="/home"
-                                className="text-decoration-none hover:text-rose-600 text-white text-xl px-3 py-2 rounded-md font-medium"
+                                className="text-decoration-none hover:text-rose-600 text-white xl:text-xl px-3 py-2 rounded-md font-medium"
                             >
                                 Home
                             </NavLink>
@@ -46,28 +46,34 @@ const Header = () => {
                             <div>
                                 {
                                     user ?
-                                        <>
+                                        <div className='flex'>
+                                            <div>
                                             <NavLink
                                                 to="/manage-item"
-                                                className="text-decoration-none text-white text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
+                                                className="text-decoration-none text-white xl:text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
                                             >
                                                 Manage Item
                                             </NavLink>
+                                            </div>
 
+                                            <div>
                                             <NavLink
                                                 to="/my-items"
-                                                className="text-decoration-none text-white text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
+                                                className="text-decoration-none text-white xl:text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
                                             >
                                                 My Item
                                             </NavLink>
+                                            </div>
 
+                                            <div>
                                             <NavLink
                                                 to="/add-new-item"
-                                                className="text-decoration-none text-white text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
+                                                className="text-decoration-none text-white xl:text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
                                             >
                                                 Add Item
                                             </NavLink>
-                                        </>
+                                            </div>
+                                        </div>
                                         :
                                         ""
                                 }
@@ -82,14 +88,14 @@ const Header = () => {
 
                             <NavLink
                                 to="/blogs"
-                                className="text-decoration-none text-white hover:text-rose-600  text-xl px-3 py-2 rounded-md text-medium font-medium"
+                                className="text-decoration-none text-white hover:text-rose-600  xl:text-xl px-3 py-2 rounded-md text-medium font-medium"
                             >
                                 Blogs
                             </NavLink>
 
                             <NavLink
                                 to="/aboutme"
-                                className="text-decoration-none text-white hover:text-rose-600  text-xl px-3 py-2 rounded-md text-medium font-medium"
+                                className="text-decoration-none text-white hover:text-rose-600  xl:text-xl px-3 py-2 rounded-md text-medium font-medium"
                             >
                                 About Me
                             </NavLink>
@@ -97,13 +103,13 @@ const Header = () => {
                             <div>
                                 {
                                     user ?
-                                        <button onClick={handleSignOut} className='text-decoration-none text-white text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium'>
+                                        <button onClick={handleSignOut} className='text-decoration-none text-white xl:text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium'>
                                             Sign Out
                                         </button>
                                         :
                                         <NavLink
                                             to="/signin"
-                                            className="text-decoration-none text-white text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
+                                            className="text-decoration-none text-white xl:text-xl hover:text-rose-600 px-3 py-2 rounded-md text-medium font-medium"
                                         >
                                             Sign In
                                         </NavLink>

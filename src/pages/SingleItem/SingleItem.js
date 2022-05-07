@@ -80,6 +80,7 @@ const SingleItem = () => {
                                 <form onSubmit={handleStock} className='flex flex-col md:flex-row space-x-0 md:space-x-1 space-y-2 md:space-y-0 mb-1'>
                                     <input className='w-72 pl-2 py-2 border-2 rounded-sm border-gray-700' type="text" name="text" ref={stockRef} id="" placeholder='Add quantity to restock the item' />
                                     <button className='w-32 block bg-gray-900 py-2 font-medium text-white border-2 border-gray-700 rounded-sm hover:bg-stone-200 hover:text-black'>Add to stock</button>
+                                    <Link className='w-32 block bg-gray-900 py-2 font-medium text-white border-2 border-gray-700 rounded-sm hover:bg-stone-200 hover:text-black text-center' to='/manage-item'>Manage Inventory</Link>
                                 </form>
                             </div>
                         </div>

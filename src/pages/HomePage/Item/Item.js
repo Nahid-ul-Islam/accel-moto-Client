@@ -10,7 +10,7 @@ const Item = ({item}) => {
                     <img src={img} alt="" srcSet="" />
                 </div>
                 <h2 className='text-2xl font-medium text-center'>{name}</h2>
-                <p className='text-center font-medium'>Price: {price}</p>
+                <p className='text-center font-medium'>Price: ${price}</p>
                 <p className='text-center font-medium'>Quantity: {quantity}</p>
                 <p className='text-center font-medium'>Supplier: {supplierName}</p>
                 <p className='mt-3 text-justify'>{description}</p>

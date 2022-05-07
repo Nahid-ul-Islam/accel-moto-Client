@@ -31,7 +31,7 @@ const TabularItem = ({item}) => {
                                 <p className='text-center text-sm text-gray-700'>{name} </p>
                             </div>
                             <div className='w-2/12 flex items-center justify-center border-[1px] md:border-2 border-gray-100'>
-                                <p className='text-center text-sm text-gray-700'>{price} </p>
+                                <p className='text-center text-sm text-gray-700'>${price} </p>
                             </div>
                             <div className='w-2/12 flex items-center justify-center border-[1px] md:border-2 border-gray-100'>
                                 <p className='text-center text-sm text-gray-700'>{quantity} </p>

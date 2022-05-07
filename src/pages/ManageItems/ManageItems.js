@@ -18,7 +18,7 @@ const ManageItems = () => {
         <div className='bg-slate-700'>
             <h2 className='text-center text-4xl font-bold text-white py-10'>Manage Inventroy</h2>
             <div className='flex justify-center'>
-                <button onClick={handleAddNewItem} className='w-56 hover:bg-gray-200 py-2 hover:text-gray-900 border-2 border-gray-700 rounded-sm bg-stone-200 text-black mb-10'>
+                <button onClick={handleAddNewItem} className='w-56 hover:bg-gray-200 py-2 hover:text-gray-900 border-2 border-gray-700 rounded-sm bg-stone-200 font-semibold hover:text-white hover:bg-stone-500 text-black mb-10'>
                     Add New Item
                 </button>
             </div>

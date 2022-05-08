@@ -24,14 +24,16 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/signin' element={<SignIn></SignIn>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
-        <Route path='/bikes/:id' element={<SingleItem></SingleItem>}></Route>
-        
+
+        <Route path='/bikes/:id' element={<RequireAuth>
+          <SingleItem></SingleItem>
+        </RequireAuth>}>
+        </Route>
+
         <Route path='/manage-item' element={
-          <RequireAuth>
             <ManageItems></ManageItems>
-          </RequireAuth>
         }></Route>
-        
+
         <Route path='/add-new-item' element={
           <RequireAuth>
             <AddNewItem></AddNewItem>

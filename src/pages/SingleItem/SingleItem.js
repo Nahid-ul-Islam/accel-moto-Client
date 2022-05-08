@@ -6,7 +6,6 @@ const SingleItem = () => {
     const stockRef = useRef('');
     const [item, setItem] = useState({});
     const [spinner, setSpinner] = useState(true);
-    console.log(spinner);
     const { _id, name, img, description, supplierName, quantity, price } = item;
 
     useEffect(() => {

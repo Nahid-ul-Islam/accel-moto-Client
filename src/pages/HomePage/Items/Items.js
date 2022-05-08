@@ -5,7 +5,6 @@ import Item from '../Item/Item';
 
 const Items = () => {
     const [items, setItems, spinner] = useLoadItems();
-    console.log(spinner);
 
     return (
         <div>

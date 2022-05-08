@@ -23,13 +23,13 @@ const Header = () => {
 
                     <div className="flex-shrink-0">
                         <NavLink to="/home" className="text-decoration-none">
-                            <div className="flex items-center">
+                            <div className="flex items-center ml-2 lg:ml-0">
                                 <img
                                     className="h-10 w-10 lg:h-10 lg:w-10 rounded-full"
                                     src={logo}
                                     alt="Workflow"
                                 />
-                                <h2 className="text-white text-xl font-medium lg:pl-5">ACCEL <span className='text-rose-600'>MOTO</span></h2>
+                                <h2 className="text-white text-xl font-medium pl-5">ACCEL <span className='text-rose-600'>MOTO</span></h2>
                             </div>
                         </NavLink>
 

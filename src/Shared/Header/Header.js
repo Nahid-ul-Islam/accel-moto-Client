@@ -17,7 +17,7 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="bg-slate-800 pb-1 sticky top-0">
+        <nav className="bg-slate-800 pb-1 sticky top-0 shadow-2xl">
             <div className="xl:mx-36 lg:mx-10 mx-auto pr-4 lg:px-0">
                 <div className="flex items-center justify-between h-16">
 

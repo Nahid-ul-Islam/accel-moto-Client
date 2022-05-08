@@ -10,6 +10,7 @@ import AddNewItem from './pages/AddNewItem/AddNewItem';
 import RequireAuth from './Shared/RequireAuth/RequireAuth';
 import MyItem from './pages/MyItems/MyTabularItem/MyTabularItem';
 import MyItems from './pages/MyItems/MyItems';
+import NotFound from './pages/NotFound/NotFound';
 
 
 function App() {
@@ -40,8 +41,9 @@ function App() {
             <MyItems></MyItems>
           </RequireAuth>
         }>
-
         </Route>
+
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
 
     </div>

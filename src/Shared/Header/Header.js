@@ -94,10 +94,10 @@ const Header = () => {
                             </NavLink>
 
                             <NavLink
-                                to="/aboutme"
+                                to="/about"
                                 className="text-decoration-none text-white hover:text-rose-600  xl:text-xl px-3 py-2 rounded-md text-medium font-medium"
                             >
-                                About Me
+                                About Us
                             </NavLink>
 
                             <div>
@@ -213,10 +213,10 @@ const Header = () => {
                         </NavLink>
 
                         <NavLink
-                            to="aboutme"
+                            to="about"
                             className="text-decoration-none text-white hover:text-rose-600  text-xl block px-3 py-2 rounded-md font-medium"
                         >
-                            About Me
+                            About Us
                         </NavLink>
 
                         <div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import supplierImage from '../../../images/extrasectiontwoimg.jpg';
 
-const ExtraSectionTwo = () => {
+const BecomeSupplier = () => {
     return (
         <div className='lg:mb-16'>
             <h2 className='bg-rose-800 text-white text-center text-2xl md:text-4xl font-bold py-9 mb-16'>Become A Supplier</h2>
@@ -24,4 +24,4 @@ const ExtraSectionTwo = () => {
     );
 };
 
-export default ExtraSectionTwo;
+export default BecomeSupplier;

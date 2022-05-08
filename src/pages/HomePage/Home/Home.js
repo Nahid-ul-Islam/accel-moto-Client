@@ -1,17 +1,19 @@
 import React from 'react';
 import Footer from '../../../Shared/Footer/Footer';
 import Banner from '../Banner/Banner';
-import ExtraSectionOne from '../ExtraSectionOne/ExtraSectionOne';
-import ExtraSectionTwo from '../ExtraSectionTwo/ExtraSectionTwo';
+import BecomeSupplier from '../BecomeSupplier/BecomeSupplier';
+
+
 import Items from '../Items/Items';
+import LatestNews from '../LatestNews/LatestNews';
 
 const Home = () => {
     return (
         <div className='bg-slate-800'>  
             <Banner></Banner>
             <Items></Items>
-            <ExtraSectionOne></ExtraSectionOne>
-            <ExtraSectionTwo></ExtraSectionTwo>
+            <LatestNews></LatestNews>
+            <BecomeSupplier></BecomeSupplier>
 
 
             <Footer></Footer>

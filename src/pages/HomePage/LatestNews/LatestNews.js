@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import newsImg from '../../../images/img5.webp';
 
-const ExtraSectionOne = () => {
+const LatestNews = () => {
     return (
         <div className='mb-24'>
             <h2 className='bg-rose-800 text-white text-center text-2xl md:text-4xl font-bold py-9 mb-16'>Latest Harley Bike News</h2>
@@ -22,4 +22,4 @@ const ExtraSectionOne = () => {
     );
 };
 
-export default ExtraSectionOne;
+export default LatestNews;

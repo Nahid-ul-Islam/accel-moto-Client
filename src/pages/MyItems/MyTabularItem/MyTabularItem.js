@@ -1,24 +1,24 @@
 import React from 'react';
 import useLoadItems from '../../../hooks/useLoadItems';
 
-const MyTabularItem = ({item}) => {
-    const { _id, name, img, price, quantity, supplierName} = item;
+const MyTabularItem = ({ item }) => {
+    const { _id, name, img, price, quantity, supplierName } = item;
     const [items, setItems] = useLoadItems();
-    
+
     const handleDeleteMyItem = (id) => {
         const del = window.confirm('Are you sure you want to delete this Item?');
-        if(del){
-            fetch(`http://localhost:5000/bikes/${id}`, {
+        if (del) {
+            fetch(`https://sleepy-mountain-69745.herokuapp.com/bikes/${id}`, {
                 method: 'DELETE'
             })
-            .then(res => res.json())
-            .then(data => {
-                const remaining = items.filter(item => item._id !== id);
-                setItems(remaining);
-            })
+                .then(res => res.json())
+                .then(data => {
+                    const remaining = items.filter(item => item._id !== id);
+                    setItems(remaining);
+                })
         }
     }
-    
+
     return (
         <div>
             <div className="bg-gray-100">
@@ -48,7 +48,7 @@ const MyTabularItem = ({item}) => {
                     </div>
                 </div>
 
-                
+
             </div>
         </div>
     );

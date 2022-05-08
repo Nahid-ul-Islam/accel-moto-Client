@@ -15,20 +15,20 @@ const AddNewItem = () => {
         const price = event.target.price.value;
         const quantity = event.target.quantity.value;
         const supplierName = event.target.supplier.value;
-        const newItem = {name, email, img, description, price, quantity, supplierName};
+        const newItem = { name, email, img, description, price, quantity, supplierName };
         console.log(newItem);
-        fetch('http://localhost:5000/bikes', {
+        fetch('https://sleepy-mountain-69745.herokuapp.com/bikes', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newItem)
         })
-        .then(res => res.json())
-        .then(data => {
-            alert ('Item added Successfully');
-            event.target.reset();
-        })
+            .then(res => res.json())
+            .then(data => {
+                alert('Item added Successfully');
+                event.target.reset();
+            })
     }
     return (
         <div>
@@ -80,21 +80,21 @@ const AddNewItem = () => {
                                     <input className="border-gray-500 appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="price" name="price" type="text" placeholder="12,350" required />
                                 </div>
                                 <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                                         Supplier
                                     </label>
                                     <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-500 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="supplier" name="supplier" type="text" placeholder="Harley" required />
                                 </div>
                                 <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
                                         Quantity
                                     </label>
                                     <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 border-gray-500 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="quantity" name="quantity" type="text" placeholder="116" required />
-                                </div> 
+                                </div>
                             </div>
                             <div className='flex justify-center my-7'>
                                 <input className='w-32 block bg-gray-900 py-2 mb-3 font-medium text-white border-2 border-gray-700 rounded-sm hover:bg-stone-200 hover:text-black'
-                                type="submit" value="Add Item" />
+                                    type="submit" value="Add Item" />
                             </div>
                         </form>
                     </div>

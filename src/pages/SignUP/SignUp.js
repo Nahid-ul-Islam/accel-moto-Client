@@ -12,8 +12,8 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
-    
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -23,14 +23,19 @@ const SignUp = () => {
         console.log(email, password);
     }
     if (loading) {
-        return <div className='text-center mt-10'>loading...</div>
+        return <div className='my-10'>
+            <div className="flex justify-center items-center">
+                < div className="animate-spin rounded-full h-16 w-16 lg:h-32 lg:w-32 border-b-2 border-black"></div>
+            </div>
+            <h4 className='text-center text-xl fond-semibold text-black mt-5'>Loading...</h4>
+        </div>
     }
 
     if (error) {
         errorElement = <p className='text-red-600'>Error: {error?.message}</p>
     }
 
-    if(user) {
+    if (user) {
         navigate('/home');
     }
 

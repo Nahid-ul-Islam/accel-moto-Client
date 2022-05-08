@@ -27,10 +27,15 @@ const SignIn = () => {
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     if (user) {
-        //navigate(from,{replace:true});
+        navigate(from, { replace: true });
     }
     if (loading || sending) {
-        return <div className='text-center mt-10'>loading...</div>
+        return <div className='my-10'>
+            <div className="flex justify-center items-center">
+                < div className="animate-spin rounded-full h-16 w-16 lg:h-32 lg:w-32 border-b-2 border-black"></div>
+            </div>
+            <h4 className='text-center text-xl fond-semibold text-black mt-5'>Loading...</h4>
+        </div>
     }
     if (error) {
 
@@ -41,14 +46,14 @@ const SignIn = () => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
-        
-        await signInWithEmailAndPassword(email, password);
-        
 
-        const {data} = await axios.post('http://localhost:5000/gettoken',
-        {email});
-        localStorage.setItem('accessToken', data.accessToken);
-        navigate(from,{replace:true});
+        await signInWithEmailAndPassword(email, password);
+
+        //jwt
+        // const {data} = await axios.post('https://sleepy-mountain-69745.herokuapp.com/gettoken',
+        // {email});
+        // localStorage.setItem('accessToken', data.accessToken);
+        // navigate(from,{replace:true});
 
     }
 

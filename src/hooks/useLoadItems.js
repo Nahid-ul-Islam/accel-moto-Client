@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 
 const useLoadItems = () => {
     const [items, setItems] = useState([]);
+    const [spinner, setSpinner] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/bikes')
+        fetch('https://sleepy-mountain-69745.herokuapp.com/bikes')
             .then(res => res.json())
-            .then(data => setItems(data));
+            .then(data =>{
+                setItems(data)
+                setSpinner(false)
+            });
     }, []);
-    return [items, setItems];
+    return [items, setItems, spinner];
 }
 
 export default useLoadItems;

@@ -4,21 +4,25 @@ import TabularItem from './TabularItem/TabularItem';
 
 const ManageItems = () => {
     const [items, setItems] = useState([]);
+    const [spinner, setSpinner] = useState(true);
     const navigate = useNavigate();
     const handleAddNewItem = () => {
         navigate('/add-new-item');
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/bikes')
+        fetch('https://sleepy-mountain-69745.herokuapp.com/bikes')
             .then(res => res.json())
-            .then(data => setItems(data));
+            .then(data => {
+                setItems(data)
+                setSpinner(false)
+            });
     }, [items]);
     return (
         <div className='bg-slate-700'>
             <h2 className='text-center text-4xl font-bold text-white py-10'>Manage Inventroy</h2>
             <div className='flex justify-center'>
-                <button onClick={handleAddNewItem} className='w-56 hover:bg-gray-200 py-2 hover:text-gray-900 border-2 border-gray-700 rounded-sm bg-stone-200 font-semibold hover:text-white hover:bg-stone-500 text-black mb-10'>
+                <button onClick={handleAddNewItem} className='w-56 py-2 border-2 border-gray-700 rounded-sm bg-stone-200 font-semibold hover:text-white hover:bg-stone-500 text-black mb-10'>
                     Add New Item
                 </button>
             </div>
@@ -36,10 +40,18 @@ const ManageItems = () => {
                 </div>
             </div>
             {
-                items.map(item => <TabularItem
-                    key={item._id}
-                    item={item}
-                ></TabularItem>)
+                spinner ?
+                    <div className='my-10'>
+                        <div className="flex justify-center items-center">
+                            < div className="animate-spin rounded-full h-16 w-16 lg:h-32 lg:w-32 border-b-2 border-white"></div>
+                        </div>
+                        <h4 className='text-center text-xl fond-semibold text-white mt-5'>Loading...</h4>
+                    </div>
+                    :
+                    items.map(item => <TabularItem
+                        key={item._id}
+                        item={item}
+                    ></TabularItem>)
             }
             <div className='h-10 bg-gray-100'></div>
         </div>

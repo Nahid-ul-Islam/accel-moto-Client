@@ -3,46 +3,37 @@ import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import MyTabularItem from './MyTabularItem/MyTabularItem';
-import { useNavigate } from 'react-router-dom';
-import { signOut } from 'firebase/auth';
 
 const MyItems = () => {
-    const [user] =useAuthState(auth);
+    const [user] = useAuthState(auth);
     const [myItems, setMyItems] = useState([]);
-    const navigate = useNavigate();
+    const [spinner, setSpinner] = useState(true);
 
-    useEffect( () => {
-        const getMyItems = async() => {
+    useEffect(() => {
+        const getMyItems = async () => {
+            const email = user.email;
+            fetch(`https://sleepy-mountain-69745.herokuapp.com/my-bikes?email=${email}`)
+                .then(res => res.json())
+                .then(data => {
+                    setMyItems(data)
+                    setSpinner(false)
+                })
+
+
+            //jwt
             // const email = user.email;
-            // fetch(`http://localhost:5000/my-bikes?email=${email}`,{
+            // const url = `https://sleepy-mountain-69745.herokuapp.com/my-bikes?email=${email}`;
+            // const {data} = await axios.get(url, {
             //     headers: {
             //         authorization: `Bearer ${localStorage.getItem('accessToken')}`
             //     }
-            // })
-            // .then( res=> res.json())
-            // .then(data => setMyItems(data))
-            const email = user.email;
-            const url = `http://localhost:5000/my-bikes?email=${email}`;
-            try{
-                const {data} = await axios.get(url, {
-                    headers: {
-                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                    }
-                });
-                setMyItems(data);
-            }
-            catch(error){
-                console.log(error.message);
-                if(error.response.status === 401 ||error.response.status === 403){
-                    signOut(auth);
-                    navigate('/signin')
-                }
-            }
+            // });
+            // setMyItems(data);
 
         }
 
         getMyItems();
-    }, [user]);
+    }, [user, myItems]);
 
     return (
         <div className='bg-slate-700'>
@@ -61,10 +52,18 @@ const MyItems = () => {
                 </div>
             </div>
             {
-                myItems.map(item => <MyTabularItem
-                    key={item._id}
-                    item={item}
-                ></MyTabularItem>)
+                spinner ?
+                    <div className='my-10'>
+                        <div className="flex justify-center items-center">
+                            < div className="animate-spin rounded-full h-16 w-16 lg:h-32 lg:w-32 border-b-2 border-white"></div>
+                        </div>
+                        <h4 className='text-center text-xl fond-semibold text-white mt-5'>Loading...</h4>
+                    </div>
+                    :
+                    myItems.map(item => <MyTabularItem
+                        key={item._id}
+                        item={item}
+                    ></MyTabularItem>)
             }
             <div className='h-10 bg-gray-100'></div>
         </div>

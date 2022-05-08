@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Footer from '../../Shared/Footer/Footer';
 
 const AddNewItem = () => {
 
@@ -40,7 +41,7 @@ const AddNewItem = () => {
 
 
 
-                    <div className='flex justify-center pt-10'>
+                    <div className='bg-gray-100 flex justify-center pt-10'>
                         <form onSubmit={handleAddItem} className="w-full max-w-lg">
                             <div className="flex flex-wrap mb-6">
                                 <div className="w-full md:w-1/2 px-3  md:mb-0">
@@ -92,18 +93,20 @@ const AddNewItem = () => {
                                     <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 border-gray-500 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="quantity" name="quantity" type="text" placeholder="116" required />
                                 </div>
                             </div>
-                            <div className='flex justify-center my-7'>
+                            <div className='flex justify-center mt-7'>
                                 <input className='w-32 block bg-gray-900 py-2 mb-3 font-medium text-white border-2 border-gray-700 rounded-sm hover:bg-stone-200 hover:text-black'
                                     type="submit" value="Add Item" />
                             </div>
                         </form>
+                        
                     </div>
 
 
 
-
+                    <Footer></Footer>
                 </div>
             </div>
+            
         </div>
     );
 };

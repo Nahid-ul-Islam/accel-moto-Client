@@ -60,10 +60,14 @@ const MyItems = () => {
                         <h4 className='text-center text-xl fond-semibold text-white mt-5'>Loading...</h4>
                     </div>
                     :
-                    myItems.map(item => <MyTabularItem
-                        key={item._id}
-                        item={item}
-                    ></MyTabularItem>)
+                    <div className='bg-gray-100 h-screen'>
+                        {
+                            myItems.map(item => <MyTabularItem
+                                key={item._id}
+                                item={item}
+                            ></MyTabularItem>)
+                        }
+                    </div>
             }
             <div className='h-10 bg-gray-100'></div>
         </div>

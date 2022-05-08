@@ -72,9 +72,9 @@ const SignIn = () => {
 
 
     return (
-        <div className='flex lg:justify-between h-screen my-auto items-center bg-slate-500'>
-            <div className='hidden lg:block ml-5 poster '>
-                <img src={img} alt="" />
+        <div className='flex md:justify-center lg:justify-between h-screen my-auto md:items-center bg-gray-100'>
+            <div className='hidden lg:mr-5 xl:mr-0 lg:block ml-5 xl:ml-32 2xl:ml-52 '>
+                <img className='lg:w-[750px]' src={img} alt="" />
             </div>
             <div className=''>
                 <h2 className='text-center text-3xl bg-slate-800 pb-4 pt-2 text-white'>Sign In</h2>

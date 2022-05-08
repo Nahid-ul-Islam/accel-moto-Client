@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../Shared/Footer/Footer';
 import TabularItem from './TabularItem/TabularItem';
 
 const ManageItems = () => {
@@ -48,12 +49,18 @@ const ManageItems = () => {
                         <h4 className='text-center text-xl fond-semibold text-white mt-5'>Loading...</h4>
                     </div>
                     :
-                    items.map(item => <TabularItem
-                        key={item._id}
-                        item={item}
-                    ></TabularItem>)
+                    <div className='bg-gray-100'>
+                        {
+                            items.map(item => <TabularItem
+                                key={item._id}
+                                item={item}
+                            ></TabularItem>)
+                        }
+                    </div>
             }
             <div className='h-10 bg-gray-100'></div>
+            <Footer></Footer>
+
         </div>
     );
 };

@@ -12,7 +12,7 @@ const Home = () => {
             <ExtraSectionOne></ExtraSectionOne>
 
 
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
         </div>
     );
 };

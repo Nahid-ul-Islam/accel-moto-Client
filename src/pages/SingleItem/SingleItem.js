@@ -16,7 +16,7 @@ const SingleItem = () => {
                 setItem(data)
                 setSpinner(false)
             });
-    }, []);
+    }, [item]);
 
     const handleDelivered = () => {
         let quantity = item.quantity;

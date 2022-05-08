@@ -11,7 +11,7 @@ const useLoadItems = () => {
                 setItems(data)
                 setSpinner(false)
             });
-    }, []);
+    }, [items]);
     return [items, setItems, spinner];
 }
 

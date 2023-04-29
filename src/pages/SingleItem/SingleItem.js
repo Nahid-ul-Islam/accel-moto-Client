@@ -9,7 +9,7 @@ const SingleItem = () => {
     const { _id, name, img, description, supplierName, quantity, price } = item;
 
     useEffect(() => {
-        fetch(`https://sleepy-mountain-69745.herokuapp.com/bikes/${id}`)
+        fetch(`https://accel-moto.onrender.com/bikes/${id}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data)
@@ -24,7 +24,7 @@ const SingleItem = () => {
         const updateItem = { quantity };
         console.log('updateItem', updateItem);
 
-        fetch(`https://sleepy-mountain-69745.herokuapp.com/bikes/${id}`, {
+        fetch(`https://accel-moto.onrender.com/bikes/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -48,7 +48,7 @@ const SingleItem = () => {
         const updateItem = { quantity };
         console.log(updateItem);
 
-        fetch(`https://sleepy-mountain-69745.herokuapp.com/bikes/${id}`, {
+        fetch(`https://accel-moto.onrender.com/bikes/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

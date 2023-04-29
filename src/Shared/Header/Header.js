@@ -86,12 +86,12 @@ const Header = () => {
                                 Services
                             </NavLink> */}
 
-                            <NavLink
+                            {/* <NavLink
                                 to="/blogs"
                                 className="text-decoration-none text-white hover:text-rose-600  xl:text-xl px-3 py-2 rounded-md text-medium font-medium"
                             >
                                 Blogs
-                            </NavLink>
+                            </NavLink> */}
 
                             <NavLink
                                 to="/about"
@@ -205,12 +205,12 @@ const Header = () => {
                         }
 
 
-                        <NavLink
+                        {/* <NavLink
                             to="blogs"
                             className="text-decoration-none text-white text-xl hover:text-rose-600 block px-3 py-2 rounded-md font-medium"
                         >
                             Blogs
-                        </NavLink>
+                        </NavLink> */}
 
                         <NavLink
                             to="about"

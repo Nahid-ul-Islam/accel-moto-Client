@@ -12,7 +12,7 @@ const MyItems = () => {
     useEffect(() => {
         const getMyItems = async () => {
             const email = user.email;
-            fetch(`https://sleepy-mountain-69745.herokuapp.com/my-bikes?email=${email}`)
+            fetch(`https://accel-moto.onrender.com/my-bikes?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     setMyItems(data)
@@ -22,7 +22,7 @@ const MyItems = () => {
 
             //jwt
             // const email = user.email;
-            // const url = `https://sleepy-mountain-69745.herokuapp.com/my-bikes?email=${email}`;
+            // const url = `https://accel-moto.onrender.com/my-bikes?email=${email}`;
             // const {data} = await axios.get(url, {
             //     headers: {
             //         authorization: `Bearer ${localStorage.getItem('accessToken')}`

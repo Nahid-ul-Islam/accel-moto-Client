@@ -18,7 +18,7 @@ const AddNewItem = () => {
         const supplierName = event.target.supplier.value;
         const newItem = { name, email, img, description, price, quantity, supplierName };
         console.log(newItem);
-        fetch('https://sleepy-mountain-69745.herokuapp.com/bikes', {
+        fetch('https://accel-moto.onrender.com/bikes', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -98,7 +98,7 @@ const AddNewItem = () => {
                                     type="submit" value="Add Item" />
                             </div>
                         </form>
-                        
+
                     </div>
 
 
@@ -106,7 +106,7 @@ const AddNewItem = () => {
                     <Footer></Footer>
                 </div>
             </div>
-            
+
         </div>
     );
 };

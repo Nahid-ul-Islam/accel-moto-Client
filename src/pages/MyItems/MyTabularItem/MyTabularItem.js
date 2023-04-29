@@ -8,7 +8,7 @@ const MyTabularItem = ({ item }) => {
     const handleDeleteMyItem = (id) => {
         const del = window.confirm('Are you sure you want to delete this Item?');
         if (del) {
-            fetch(`https://sleepy-mountain-69745.herokuapp.com/bikes/${id}`, {
+            fetch(`https://accel-moto.onrender.com/bikes/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

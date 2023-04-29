@@ -12,7 +12,7 @@ const ManageItems = () => {
     }
 
     useEffect(() => {
-        fetch('https://sleepy-mountain-69745.herokuapp.com/bikes')
+        fetch('https://accel-moto.onrender.com/bikes')
             .then(res => res.json())
             .then(data => {
                 setItems(data)

@@ -50,7 +50,7 @@ const SignIn = () => {
         await signInWithEmailAndPassword(email, password);
 
         //jwt
-        // const {data} = await axios.post('https://sleepy-mountain-69745.herokuapp.com/gettoken',
+        // const {data} = await axios.post('https://accel-moto.onrender.com/gettoken',
         // {email});
         // localStorage.setItem('accessToken', data.accessToken);
         // navigate(from,{replace:true});

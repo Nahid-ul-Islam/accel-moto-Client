@@ -8,9 +8,6 @@ import img3 from '../../../images/img3.avif';
 import img4 from '../../../images/img4.avif';
 import img5 from '../../../images/img5.webp';
 
-//import './Banner.css';
-import { Link } from 'react-router-dom';
-
 const Banner = () => {
     return (
         <div>
